@@ -18,3 +18,9 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(${PROJECT_NAME} src/main.cc)
+
+find_package(Drogon CONFIG REQUIRED)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE Drogon::Drogon)
+
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
